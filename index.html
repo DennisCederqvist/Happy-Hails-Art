@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Hails Art</title>
+  <!-- If your files are in the same folder as index.html, use styles.css / script.js instead -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav id="navbar" class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/images/logo1-removebg-preview.png" alt="Happy Hails Art Logo">
+        </a>
+    </div>
+
+    <!-- Hamburger button (top-right) -->
+    <button id="menuButton" class="hamburger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Off-canvas navigation -->
+    <div id="navLinks" class="nav-links" role="navigation" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Backdrop for the drawer -->
+    <div id="backdrop" class="backdrop" hidden></div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="spark">
+        <img src="assets/images/logo1-removebg-preview.png" alt="Welcom to Happy Haail Arts Logo">
+      </div>
+      <div class="info">
+        <h3>Book Rebinds, Digital Art, Paintings, Stickers <br> and More !</h3>
+        <h3 class="quote">~ Artist at Pineapple Picasso</h3>
+      </div>
+      <div class="potter">
+        <img src="assets/images/potter2.jpg" alt="a handcraften custom made bookbind of Harry Potter and the Prisoner of Azkaban">
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

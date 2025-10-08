@@ -1,0 +1,180 @@
+:root {
+    --menu-width: 30vw; /* drawer width & button shift */
+    --nav-height: 64px; /* top bar height */
+}
+
+/* navbar and hamburger rules starts here */
+
+/* Top navbar container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    padding-right: 56px;          /* reserve space so logo/text don't sit under the button */
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(6px);
+    z-index: 1500;                /* below the button (2000) but above the backdrop (1100) */
+    box-sizing: border-box;
+}
+
+/* Prevent content from sliding under the fixed navbar */
+body { padding-top: var(--nav-height); }
+
+/* Logo sizing */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Button stays on the top-right and can slide left when open */
+.hamburger {
+    position: fixed;              /* keep it pinned to the viewport corner */
+    top: 8px;
+    right: 12px;
+    height: 44px;
+    width: 44px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2000;                /* higher than drawer/backdrop */
+}
+
+/* Rotate icon 90° -> 3 vertical lines when open */
+.hamburger svg { transition: transform 200ms ease-out; }
+.menu-open .hamburger svg { transform: rotate(90deg); }
+
+/* RIGHT-SIDE off-canvas drawer */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;                      /* anchor to RIGHT */
+    height: 100dvh;
+    width: var(--menu-width);
+    max-width: 420px;
+    background: #000;
+    padding: calc(56px + 12px) 16px 16px; /* leave room for the button on top */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateX(100%);   /* hidden off-screen to RIGHT */
+    transition: transform 220ms ease-out;
+    z-index: 1200;                 /* below hamburger, above backdrop */
+}
+
+/* Drawer links */
+.nav-links a {
+    display: inline-block;
+    width: 60px;
+    height: auto;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 8px;
+    border-radius: 8px;
+    background: #f7baff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Show drawer when open */
+.nav-links.open { transform: translateX(0); }
+
+/* Make the button slide left by the drawer width when open */
+.menu-open .hamburger {
+    transform: translateX(calc(-1 * var(--menu-width)));
+    transition: transform 220ms ease-out;
+}
+
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.28);
+    z-index: 1100;                 /* < drawer (1200) < button (2000) */
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+}
+.backdrop.show { opacity: 1; }
+
+/* Prevent body scroll when open */
+.no-scroll { overflow: hidden; touch-action: none; }
+
+/* Desktop: inline menu, no drawer/button/backdrop */
+@media (min-width: 768px) {
+    .hamburger, .backdrop { display: none !important; }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        width: auto;
+        max-width: none;
+        transform: none !important;
+        padding: 0;
+        background: transparent;
+        flex-direction: row;
+        gap: 10px;
+        margin-left: auto;          /* push links to the right of the logo */
+        align-items: center;
+    }
+
+    .nav-links a { padding: 10px 8px; }
+
+    .navbar {
+        padding: 0 150px;
+    }
+}
+
+/* Navbar and hamburgers end here */
+
+/* hero section starts here */
+
+.hero {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero img {
+    width: 80%;
+    height: auto;
+}
+
+.info {
+    justify-self: start;
+    text-align: left;
+}
+
+.info h3 {
+    margin: 0.3rem 0;
+    font-weight: normal;
+}
+
+.quote {
+    justify-self: start;
+    text-align: left;
+    font-style: italic;
+}
+
+.potter {
+    justify-self: end;
+}
+
+.potter img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50px;
+}
