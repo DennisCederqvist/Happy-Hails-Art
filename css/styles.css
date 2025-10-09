@@ -1,3 +1,8 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
 :root {
     --menu-width: 30vw; /* drawer width & button shift */
     --nav-height: 64px; /* top bar height */
@@ -32,6 +37,11 @@ h1, h2, h3 {
   font-family: 'Dancing Script', cursive;
 }
 
+img {
+    max-height: 300px;
+    border-radius: 50px;
+    max-width: 300px;
+}
 
 /* Logo sizing */
 .logo img {
@@ -64,8 +74,8 @@ h1, h2, h3 {
 .nav-links {
     position: fixed;
     top: 0;
-    right: 0;                      /* anchor to RIGHT */
-    height: 100dvh;
+    right: 0;
+    height: 100vh;
     width: var(--menu-width);
     max-width: 420px;
     background: #000;
@@ -77,6 +87,7 @@ h1, h2, h3 {
     transform: translateX(100%);   /* hidden off-screen to RIGHT */
     transition: transform 0.5s ease-out;
     z-index: 1200;                 /* below hamburger, above backdrop */
+    overflow-y: auto;
 }
 
 /* Drawer links */
@@ -149,7 +160,6 @@ h1, h2, h3 {
     .nav-links {
         position: static;
         height: auto;
-        width: auto;
         max-width: none;
         transform: none !important;
         padding: 0;
@@ -158,6 +168,7 @@ h1, h2, h3 {
         gap: 10px;
         margin-left: auto;          /* push links to the right of the logo */
         align-items: center;
+        overflow: visible;
     }
 
     .navbar {
@@ -176,7 +187,7 @@ h1, h2, h3 {
     text-align: center;
     gap: 3rem;
     padding: 2rem 1rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -204,24 +215,63 @@ h1, h2, h3 {
 
 /* hero ends here */
 
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+
 /* what we do section starts here */
 
-.what-we-do {
+.features {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    text-align: center;
+}
+
+.features img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5rem;
 }
 
 .desc h2 {
     font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* makes it work on desktop */
+@media (min-width: 768px) {
+.features {
+    grid-template-columns: 1fr 1fr; /* ← two columns on larger screens */
+    gap: 5rem 0;
+    text-align: left;
+}
+.features img {
+    transition: transform 0.5s ease;
+}
+.features img:hover {
+    transform: scale(1.15);
+}
+
+.desc {
     justify-self: center;
 }
 
-.image img{
-    max-width: 300px;
-    border-radius: 50px;
+.swap-order {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+.text-swap {
+    justify-self: center;
+    text-align: right;
+}
+  
 }
 
 /* what we do ends here */

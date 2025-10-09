@@ -10,57 +10,81 @@
 </head>
 <body>
 
-  <nav id="navbar" class="navbar">
-    <div class="logo">
-        <a href="index.html">
-            <img src="assets/images/logo1-removebg-preview.png" alt="Happy Hails Art Logo">
-        </a>
-    </div>
+    <header>
+        <nav id="navbar" class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo1-removebg-preview.png" alt="Happy Hails Art Logo">
+                </a>
+            </div>
 
-    <!-- Hamburger button (top-right) -->
-    <button id="menuButton" class="hamburger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
-      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
+            <!-- Hamburger button (top-right) -->
+            <button id="menuButton" class="hamburger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            </button>
 
-    <!-- Off-canvas navigation -->
-    <div id="navLinks" class="nav-links" role="navigation" aria-hidden="true">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
+            <!-- Off-canvas navigation -->
+            <div id="navLinks" class="nav-links" role="navigation" aria-hidden="true">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            </div>
 
-    <!-- Backdrop for the drawer -->
-    <div id="backdrop" class="backdrop" hidden></div>
-  </nav>
+            <!-- Backdrop for the drawer -->
+            <div id="backdrop" class="backdrop" hidden></div>
+        </nav>
+
+        <section class="hero">
+                <div class="spark">
+                    <img src="assets/images/logo1-removebg-preview.png" alt="Welcom to Happy Haail Arts Logo">
+                </div>
+
+                <div class="info">
+                <h3>Book Rebinds, Digital Art, Paintings, Stickers <br> and More !</h3>
+                    <h3 class="quote">~ Artist at Pineapple Picasso</h3>
+                </div>
+        </section>
+    </header>
 
   <main>
-    <section class="hero">
-        <div class="spark">
-            <img src="assets/images/logo1-removebg-preview.png" alt="Welcom to Happy Haail Arts Logo">
-        </div>
-        <div class="info">
-        <h3>Book Rebinds, Digital Art, Paintings, Stickers <br> and More !</h3>
-            <h3 class="quote">~ Artist at Pineapple Picasso</h3>
-        </div>
-    </section>
+    
+    <div class="title">
+        <h1>What we do!</h1>
+    </div>
 
     <section class="what-we-do">
+        <div class="features">
 
-        <div class="desc">
-            <h2>Custom Rebinds</h2>
-        </div>
-        <div class="image">
-            <img src="assets/images/potter2.jpg" alt="image of a custom rebind of the book harry potter and the prisoner of azkaban">
-        </div>
+            <div class="desc">
+                <h2>Handcrafted Rebinds</h2>
+                <p>Tierd of you old and worn out covers? <br> We give them new life.
+                </p>
+            </div>
+                <img src="assets/images/potter2.jpg" alt="image of a custom rebind of the book harry potter and the prisoner of azkaban">
+            
+            <div class="desc text-swap">
+                <h2>Custom Stickers</h2>
+                <p>Are you in a sticky situation? <br> Nothing a sticker can't fix.</p>
+            </div>
+                <img class="swap-order" src="assets/images/Stickers.jpg" alt="image of 6 stickers with a cute axelotl with classes reading a book in different colors">
 
+            <div class="desc">
+                <h2>Digital Art</h2>
+                <p>You need some cutom art? <br> Leave it to us.</p>
+            </div>
+                <img src="assets/images/digitalart.jpg" alt="Beautiful digital drawin of a hearshaped vase with pink liquid, inside the liquid a man is lovingly lifting a woman">
+        
+        </div>
     </section>
 
   </main>
 
-  <footer></footer>
+  <footer>
+
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
