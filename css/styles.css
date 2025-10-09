@@ -275,11 +275,14 @@ h1, h2, h3 {
     text-align: right;
 }
 
-.info, .quote {
-    justify-self: center;
-    text-align: center;
+.features {
+    justify-items: center;
 }
-  
+
+.features img {
+    margin-bottom: 0;
+}
+
 }
 
 /* what we do ends here */
