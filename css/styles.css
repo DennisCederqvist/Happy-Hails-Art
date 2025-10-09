@@ -37,11 +37,11 @@ h1, h2, h3 {
   font-family: 'Dancing Script', cursive;
 }
 
-img {
+/* img {
     max-height: 300px;
     border-radius: 50px;
     max-width: 300px;
-}
+} */
 
 /* Logo sizing */
 .logo img {
@@ -75,7 +75,7 @@ img {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100svh;
     width: var(--menu-width);
     max-width: 420px;
     background: #000;
@@ -238,6 +238,9 @@ img {
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50px;
 }
 
 .desc h2 {
@@ -270,6 +273,11 @@ img {
 .text-swap {
     justify-self: center;
     text-align: right;
+}
+
+.info, .quote {
+    justify-self: center;
+    text-align: center;
 }
   
 }
