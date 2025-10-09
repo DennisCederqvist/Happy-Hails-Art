@@ -23,11 +23,19 @@
 }
 
 /* Prevent content from sliding under the fixed navbar */
-body { padding-top: var(--nav-height); }
+body { 
+    padding-top: var(--nav-height);
+    font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+}
+
 
 /* Logo sizing */
 .logo img {
-    height: 40px;
+    height: 70px;
     width: auto;
     display: block;
 }
@@ -64,25 +72,51 @@ body { padding-top: var(--nav-height); }
     padding: calc(56px + 12px) 16px 16px; /* leave room for the button on top */
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
     transform: translateX(100%);   /* hidden off-screen to RIGHT */
-    transition: transform 220ms ease-out;
+    transition: transform 0.5s ease-out;
     z-index: 1200;                 /* below hamburger, above backdrop */
 }
 
 /* Drawer links */
+
 .nav-links a {
-    display: inline-block;
-    width: 60px;
-    height: auto;
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 10px 8px;
-    border-radius: 8px;
-    background: #f7baff;
-    text-align: center;
-    margin: 0 auto;
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 55px;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(135deg, #f7baff, #D0A8F0, #6FD59D);
+  background-size: 300% 300%;
+  animation: gradientIdle 4s ease infinite; /* was 10s — faster */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover: accelerate color flow */
+.nav-links a:hover {
+  animation: gradientSpin 1s linear infinite; /* quicker loop */
+  transform: scale(1.07);
+  box-shadow: 0 0 12px rgba(207, 167, 255, 0.6);
+}
+
+/* Idle subtle movement (now faster) */
+@keyframes gradientIdle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover: dynamic spin/shift effect */
+@keyframes gradientSpin {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Show drawer when open */
@@ -126,8 +160,6 @@ body { padding-top: var(--nav-height); }
         align-items: center;
     }
 
-    .nav-links a { padding: 10px 8px; }
-
     .navbar {
         padding: 0 150px;
     }
@@ -161,20 +193,35 @@ body { padding-top: var(--nav-height); }
 .info h3 {
     margin: 0.3rem 0;
     font-weight: normal;
+    font-size: 30px;
 }
 
 .quote {
-    justify-self: start;
+    justify-self: end;
     text-align: left;
     font-style: italic;
 }
 
-.potter {
-    justify-self: end;
+/* hero ends here */
+
+/* what we do section starts here */
+
+.what-we-do {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.potter img {
+.desc h2 {
+    font-size: 30px;
+    justify-self: center;
+}
+
+.image img{
     max-width: 300px;
-    height: auto;
     border-radius: 50px;
 }
+
+/* what we do ends here */
