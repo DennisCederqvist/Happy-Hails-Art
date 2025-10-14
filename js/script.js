@@ -35,3 +35,5 @@
     if (e.target.closest('a')) closeMenu();
   });
 })();
+
+document.getElementById("year").textContent = new Date().getFullYear();

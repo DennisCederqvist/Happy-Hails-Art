@@ -286,3 +286,46 @@ h1, h2, h3 {
 }
 
 /* what we do ends here */
+
+/* footer starts here */
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    background: rgba(0,0,0,.6);
+    height: 50px;
+    overflow: visible;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 -2px 8px rgba(0,0,0,.15);
+    box-sizing: border-box;
+    z-index: 10;
+    color: #fff;
+}
+
+footer a {
+    color: pink;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+  footer { bottom: -0.5px; }
+}
+
+/* footer ends here */
