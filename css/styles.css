@@ -2,11 +2,43 @@
 * {
     margin: 0;
     padding: 0;
+    /* outline: 2px solid red; */
 }
+
 :root {
-    --menu-width: 30vw; /* drawer width & button shift */
+    --menu-width: clamp(240px, 60%, 360px);/* drawer width & button shift */
     --nav-height: 64px; /* top bar height */
 }
+
+body { 
+    padding-top: var(--nav-height);
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+}
+
+h2 {
+    padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+    margin-top: 200px;
+}
+
+/* main {
+    flex: 1;
+} */
+
 
 /* navbar and hamburger rules starts here */
 
@@ -23,29 +55,12 @@
     padding-right: 56px;          /* reserve space so logo/text don't sit under the button */
     background: rgba(0,0,0,.6);
     backdrop-filter: blur(6px);
-    z-index: 1500;                /* below the button (2000) but above the backdrop (1100) */
+    z-index: 100;                /* below the button (2000) but above the backdrop (1100) */
     box-sizing: border-box;
 }
 
 /* Prevent content from sliding under the fixed navbar */
-body { 
-    padding-top: var(--nav-height);
-    font-family: 'Nunito', sans-serif;
-}
 
-h1, h2, h3 {
-  font-family: 'Dancing Script', cursive;
-}
-
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
 
 /* Logo sizing */
 .logo img {
@@ -60,7 +75,7 @@ main {
     top: 8px;
     right: 12px;
     height: 44px;
-    width: 44px;
+    /* width: 44px; */
     display: grid;
     place-items: center;
     border: none;
@@ -68,6 +83,8 @@ main {
     color: #fff;
     cursor: pointer;
     z-index: 2000;                /* higher than drawer/backdrop */
+    max-width: 44px;
+    overflow: hidden;
 }
 
 /* Rotate icon 90° -> 3 vertical lines when open */
@@ -108,12 +125,12 @@ main {
   background: linear-gradient(135deg, #f7baff, #D0A8F0, #6FD59D);
   background-size: 300% 300%;
   animation: gradientIdle 4s ease infinite; /* was 10s — faster */
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.5s ease, box-shadow 0.25s ease;
 }
 
 /* Hover: accelerate color flow */
 .nav-links a:hover {
-  animation: gradientSpin 1s linear infinite; /* quicker loop */
+  /* animation: gradientSpin 1s linear infinite; */
   transform: scale(1.07);
   box-shadow: 0 0 12px rgba(207, 167, 255, 0.6);
 }
@@ -176,7 +193,9 @@ main {
     }
 
     .navbar {
-        padding: 0 150px;
+        padding: 0 5vw;
+        box-sizing: border-box;
+        width: 100%;
     }
 }
 
@@ -205,7 +224,7 @@ main {
     text-align: left;
 }
 
-.info h3 {
+.info h2 {
     margin: 0.3rem 0;
     font-weight: normal;
     font-size: 30px;
@@ -247,7 +266,7 @@ main {
     border-radius: 50px;
 }
 
-.desc h2 {
+.desc h3 {
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -291,6 +310,81 @@ main {
 
 /* what we do ends here */
 
+/* gallery starts here */
+
+.gallery-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    height: 300px;
+    width: auto;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+/* gallery ends here */
+
+/* about starts here */
+
+.aboutCon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutDec h2 {
+    padding: 20px 0px;
+}
+
+.aboutDec {
+    max-width: 600px;
+}
+
+.aboutImg {
+    height: 175px;
+    border: 1px solid hotpink;
+    border-radius: 100%;
+}
+
+/* about ends here */
+
+/* contacts starts here */
+.tags {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.tags a {
+    display: inline-block;
+    background: linear-gradient(135deg, #f7baff, #D0A8F0, #6FD59D);
+    background-size: 300% 300%;
+    animation: gradientIdle 4s ease infinite;
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    transition: transform 0.5s ease;
+
+    /* animation: gradientIdle 4s ease infinite; */
+}
+
+.tags a:hover {
+    transform: scale(1.2);
+}
+
+/* contacts ends here */
+
+
 /* footer starts here */
 
 footer {
@@ -331,3 +425,8 @@ footer a {
 }
 
 /* footer ends here */
+
+
+
+/* testing section */
+
